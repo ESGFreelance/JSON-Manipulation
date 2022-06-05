@@ -12,23 +12,13 @@ P.Quantity = 50;
 
 #endregion
 #region Serialization
-string output = JsonConvert.SerializeObject(P);
-JsonSerializer serializer = new JsonSerializer();
-string result = JsonConvert.SerializeObject(P);
-
-
-
-Console.WriteLine();
+//The process of converting .NET objects into JSON
+string serialize = JsonConvert.SerializeObject(P, Formatting.Indented);
+Console.WriteLine(serialize);  
 #endregion
 
 #region Deserialization
-
-#endregion
-
-#region Search
-
-#endregion
-
-#region Manipulation
-
+//The process of converting JSON into .NET objects
+Product deserialize = JsonConvert.DeserializeObject<Product>(serialize);
+Console.WriteLine(deserialize);
 #endregion
